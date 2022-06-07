@@ -10,8 +10,6 @@ header = {
 dfs = {}
 for url in urls:
     r = requests.get(url, headers=header)
-    # print(r.content)
     dfs[url] = pd.read_csv(BytesIO(r.content))
-    # print(dfs)
 for df in dfs:
     print(df, dfs[df])
